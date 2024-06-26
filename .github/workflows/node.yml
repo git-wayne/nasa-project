@@ -8,13 +8,10 @@ jobs:
   build:
     env:
       CI: true
-    strategy:
-      matrix:
-        node-version: [16x, 20.x]
-    runs-on: ${{matrix.node-version}}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node js version ${{matrix.node-version}}
+      - name: Use Node js version 20
         uses: actions/setup-node@v4
         with:
           node-version: "20"
